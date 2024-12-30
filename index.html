@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Centered Carousel with Bigger Firecracker Burst</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #1a1a1a, #4e54c8, #8f94fb);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100px;
+      height: 150px;
+      perspective: 1500px;
+    }
+
+    .carousel__container {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-out;
+      transform: rotateX(-90deg);
+    }
+
+    .carousel__item {
+      position: absolute;
+      width: 150px;
+      height: 175px;
+      transform-origin: center;
+      display: style;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .carousel__item img {
+      width: 150%;
+      height: 175%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      z-index: 0;
+    }
+
+    .center-text-2 {
+      position: absolute;
+      top: 200%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      font-weight: bold;
+      color: #0e0000;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      z-index: 0;
+    }
+
+    /* Bigger Cracker/Firework Effect */
+    .firework {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      opacity: 0;
+      animation: burst 1.5s ease-out forwards;
+    }
+
+    /* Keyframe animation for the firework burst */
+    @keyframes burst {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(8); /* Larger scale for a bigger burst */
+        opacity: 0;
+      }
+    }
+
+    /* Add some variations to the particles for a more random effect */
+    .firework:nth-child(odd) {
+      background-color: rgba(255, 165, 0, 0.9); /* Orange */
+    }
+
+    .firework:nth-child(even) {
+      background-color: rgba(0, 255, 0, 0.9); /* Green */
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="center-text">Happy New Year 2025</div>
+    <div class="center-text-2">click me</div>
+    <div class="carousel__container">
+      <div class="carousel__item" style="transform: rotateY(0deg) translateZ(400px) translateY(0px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 1">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(36deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 2">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(72deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 3">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(108deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 4">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(144deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 5">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(180deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 6">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(216deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 7">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(252deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 8">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(288deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 9">
+      </div>
+      <div class="carousel__item" style="transform: rotateY(324deg) translateZ(400px);">
+        <img src="IMG_20240404_201500112.jpg" alt="Image 10">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Firework effect on page load
+    window.onload = function() {
+      // Create bigger fireworks when the page loads
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          createFirework();
+        }, i * 300); // Stagger the fireworks
+      }
+    };
+
+   
+      
+    
+  </script>
+</body>
+</html>
