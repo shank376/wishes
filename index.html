@@ -22,7 +22,7 @@
       width: 100px;
       height: 150px;
       perspective: 1500px;
-      max-width: 100px; /* Limits the size for larger screens */
+      
     }
 
     .carousel__container {
@@ -83,56 +83,8 @@
       text-align: center;
       z-index: 0; /* Text is behind the carousel items */
     }
-    /* Media Queries for mobile responsiveness */
-    @media screen and (max-width: 600px) {
-      .carousel {
-        width: 90%; /* Smaller carousel on mobile */
-        max-width: 90%;
-      }
-
-      .carousel__item {
-        width: 100%; /* Carousel items take up full width on small screens */
-        height: auto;
-      }
-
-      .center-text {
-        font-size: 30px; /* Smaller text on mobile */
-      }
-
-      .center-text-2 {
-        font-size: 14px; /* Adjust text size on mobile */
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      .carousel {
-        width: 80%; /* Smaller carousel on tablets */
-      }
-
-      .carousel__item {
-        width: 120px; /* Adjust item size on tablets */
-        height: 140px;
-      }
-
-      .center-text {
-        font-size: 50px; /* Adjust text size on tablets */
-      }
-    }
-
-    @media screen and (min-width: 1025px) {
-      .carousel {
-        width: 60%; /* Carousel takes up 60% on large screens */
-      }
-
-      .carousel__item {
-        width: 150px;
-        height: 175px;
-      }
-
-      .center-text {
-        font-size: 80px; /* Larger text on desktop */
-      }
-    }
+    
+    
   </style>
 </head>
 <body>
